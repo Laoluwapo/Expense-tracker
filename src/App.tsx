@@ -2,8 +2,7 @@ import { useState } from "react";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseFilter from "./components/ExpenseFilter";
 import ExpenseForm from "./components/ExpenseForm";
-
-export const categories = ["Balling", "Feeding", "Transportation", "Gaming"];
+import categories from "./categories";
 
 function App() {
   // Dummy array of expenses
