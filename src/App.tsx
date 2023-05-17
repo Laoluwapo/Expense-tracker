@@ -10,8 +10,6 @@ function App() {
     { id: 1, description: "aaa", amount: 50, category: "Balling" },
     { id: 2, description: "bbb", amount: 50, category: "Feeding" },
     { id: 3, description: "ccc", amount: 50, category: "Transportation" },
-    { id: 4, description: "ddd", amount: 50, category: "Gaming" },
-    { id: 5, description: "eee", amount: 50, category: "Feeding" },
   ]);
 
   // State to manage the filter
@@ -25,7 +23,14 @@ function App() {
   return (
     <div>
       <div className="mb-5">
-        <ExpenseForm />
+        <ExpenseForm
+          onSubmit={(newExpense) =>
+            setExpenses([
+              ...expenses,
+              { ...newExpense, id: expenses.length + 1 },
+            ])
+          }
+        />
       </div>
       <div className="mb-3">
         <ExpenseFilter
